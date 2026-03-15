@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --accent: #2dd4bf;
-  --muted: #71717a;
+  --background: #fafafa; /* Soft white */
+  --foreground: #111111; /* Crisp black */
+  --accent: #2c3e50;    /* Deep Indigo */
+  --muted: #666666;
+  --secondary: #f1f1f1; /* Light gray */
 }
 
 @theme inline {
@@ -12,6 +13,7 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted);
+  --color-secondary-bg: var(--secondary);
   
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
@@ -19,11 +21,11 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased tracking-tight;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif font-bold text-foreground tracking-tighter;
   }
 }
 
@@ -36,9 +38,17 @@
 }
 
 .nav-link {
-  @apply text-sm uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-200;
+  @apply text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors duration-200 font-bold;
 }
 
 .impact-number {
-  @apply text-5xl md:text-7xl font-serif font-bold text-accent;
+  @apply text-5xl md:text-8xl font-serif font-bold text-foreground;
+}
+
+.btn-primary {
+  @apply bg-foreground text-background px-8 py-4 rounded-full font-bold hover:bg-accent transition-all flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply border border-foreground/10 px-8 py-4 rounded-full font-bold hover:bg-foreground/5 transition-all text-center;
 }
