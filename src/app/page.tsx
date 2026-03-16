@@ -240,10 +240,10 @@ export default function Home() {
               
               <div className="flex flex-col items-center gap-12">
                 <a 
-                  href="mailto:saumya.analytics@gmail.com" 
+                  href="mailto:hello@asksaumya.com" 
                   className="text-3xl md:text-5xl font-serif font-bold hover:italic transition-all border-b-2 border-foreground/10 hover:border-foreground pb-2 flex items-center group"
                 >
-                  saumya.analytics@gmail.com
+                  hello@asksaumya.com
                   <ArrowUpRight className="ml-4 w-10 h-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </a>
                 <div className="flex flex-col md:flex-row gap-8 text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
