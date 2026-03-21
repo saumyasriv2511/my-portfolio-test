@@ -141,23 +141,23 @@ export default function Home() {
                 {
                   value: "$2M+",
                   label: "Incremental Revenue",
-                  description: "Generated annually from a custom-built collaborative filtering personalization engine at Sam's Club."
+                  description: "Generated annually from a custom-built collaborative filtering personalization engine."
                 },
                 {
                   value: "20%",
                   label: "Marketing Spend Optimization",
-                  description: "Direct reduction in marketing spend achieved via predictive modeling and budget reallocation strategies at AAA Life."
+                  description: "Direct reduction in marketing spend achieved via predictive modeling and budget reallocation strategies."
                 },
                 {
                   value: "$1.4M",
                   label: "Direct Profit Swing",
                   description: "Flipped a $200K loss to $200K profit while saving $1M in direct mail spend via uplift modeling."
                 },
-                /*{
+                {
                   value: "~$100M",
                   label: "Campaign Impact Managed",
-                  description: "Led measurement for multi-channel campaigns with an estimated annual impact of $100M+ at Rocket Mortgage."
-                }*/
+                  description: "Led measurement for multi-channel campaigns with an estimated annual impact of $100M+."
+                }
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
