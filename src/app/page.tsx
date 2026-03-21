@@ -25,7 +25,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-foreground/5 px-6 py-4">
         <div className="container-custom flex justify-between items-center">
           <Link href="/" className="font-serif text-2xl font-bold tracking-tighter">
-            ASK Advisory
+            Saumya Srivastava
           </Link>
           <div className="hidden md:flex space-x-12 items-center">
             <a href="#services" className="nav-link">Expertise</a>
