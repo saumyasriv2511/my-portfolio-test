@@ -56,7 +56,7 @@ export default function Home() {
                 <span className="text-muted-foreground/40 italic font-medium">I help you back it with data.</span>
               </h1>
               <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
-                Bridging the gap between high-level marketing strategy and technical data execution at scale. Based in Bengaluru, serving global growth teams.
+                Bridging the gap between high-level marketing strategy and technical data execution at scale, serving global growth teams.
               </p>
               <div className="flex flex-col sm:flex-row gap-8">
                 <a href="#contact" className="btn-primary group">
@@ -195,7 +195,7 @@ export default function Home() {
                     I founded my independent practice to help companies bridge the gap between their strategic ambitions and their technical reality. I don't just deliver reports; I build the systems that drive measurable growth.
                   </p>
                   <p>
-                    Based in Bengaluru after nearly a decade in the US, I bring a global perspective to international clients seeking senior-tier marketing analytics expertise and AI strategy.
+                    After nearly a decade in the US Corporate, I bring a global perspective to international clients seeking senior-tier marketing analytics expertise and AI strategy.
                   </p>
                 </div>
               </motion.div>
