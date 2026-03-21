@@ -153,11 +153,11 @@ export default function Home() {
                   label: "Direct Profit Swing",
                   description: "Flipped a $200K loss to $200K profit while saving $1M in direct mail spend via uplift modeling."
                 },
-                {
+                /*{
                   value: "~$100M",
                   label: "Campaign Impact Managed",
                   description: "Led measurement for multi-channel campaigns with an estimated annual impact of $100M+ at Rocket Mortgage."
-                }
+                }*/
               ].map((item, idx) => (
                 <motion.div 
                   key={idx}
