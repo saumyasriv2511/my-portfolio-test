@@ -195,7 +195,7 @@ export default function Home() {
                     I founded my independent practice to help companies bridge the gap between their strategic ambitions and their technical reality. I don't just deliver reports; I build the systems that drive measurable growth.
                   </p>
                   <p>
-                    After nearly a decade in the US Corporate, I bring a global perspective to international clients seeking senior-tier marketing analytics expertise and AI strategy.
+                    After spending nearly a decade in the US Corporate, I bring a global perspective to international clients seeking senior-tier marketing analytics expertise and AI strategy.
                   </p>
                 </div>
               </motion.div>
