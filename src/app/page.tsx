@@ -30,6 +30,7 @@ export default function Home() {
           <div className="hidden md:flex space-x-12 items-center">
             <a href="#services" className="nav-link">Expertise</a>
             <a href="#impact" className="nav-link">Impact</a>
+            <Link href="/blog" className="nav-link">Blog</Link>
             <a href="#about" className="nav-link">About</a>
             <a href="#contact" className="nav-link border border-foreground px-5 py-2 rounded-full hover:bg-foreground hover:text-background transition-all">
               Work With Me
