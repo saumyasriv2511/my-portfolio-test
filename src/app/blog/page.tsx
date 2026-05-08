@@ -7,7 +7,7 @@ const blogPosts = [
   {
     id: "personalization-marketing-science",
     title: "The Science of Making It Personal: How AI Is Rewriting Marketing's Most Misunderstood Discipline",
-    excerpt: "From RFM scores to reinforcement learning — and what comes after the cookie crumbles.",
+    excerpt: "From RFM scores to reinforcement learning, and what comes after the cookie crumbles.",
     date: "May 2026",
     category: "Marketing Science",
     readTime: "8 min read"

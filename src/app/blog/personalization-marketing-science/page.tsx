@@ -56,13 +56,13 @@ export default function BlogPost() {
                   Personalization in Marketing Science: How AI Is Rewriting the Rules of Engagement
                 </h1>
                 <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-tight tracking-tight border-l-2 border-accent pl-8 py-2 italic">
-                  "From RFM scores to reinforcement learning — and what comes after the cookie crumbles."
+                  "From RFM scores to reinforcement learning, and what comes after the cookie crumbles."
                 </p>
               </header>
 
               <div className="space-y-12 text-lg text-foreground leading-relaxed font-medium">
                 <p>
-                  <span className="text-5xl font-serif float-left mr-4 mt-2 leading-none text-accent">T</span>here's a phrase that gets thrown around marketing strategy decks with alarming regularity: "right message, right person, right time." It sounds obvious. Almost trivially obvious. The reason it persists as a goal — rather than a baseline — is that actually achieving it is one of the hardest technical problems in modern business.
+                  <span className="text-5xl font-serif float-left mr-4 mt-2 leading-none text-accent">T</span>here's a phrase that gets thrown around marketing strategy decks with alarming regularity: "right message, right person, right time." It sounds obvious. Almost trivially obvious. The reason it persists as a goal, rather than a baseline, is that actually achieving it is one of the hardest technical problems in modern business.
                 </p>
                 
                 <p>
@@ -77,26 +77,32 @@ export default function BlogPost() {
 
                 <section>
                   <h2 className="text-2xl md:text-3xl font-serif font-bold tracking-tighter mb-8 pt-8 text-accent">
-                    What the pre-AI toolkit got right — and where it broke
+                    What the pre-AI toolkit got right, and where it broke
                   </h2>
                   <div className="space-y-6">
                     <p>
-                      Before machine learning entered the picture, personalization ran on three main engines: rule-based systems, RFM analysis, and collaborative filtering. Each was genuinely useful. Each had a ceiling that reflected the fundamental constraint of the era: every insight required a human to define it.
+                      Before machine learning entered the picture, personalization ran on several foundational engines: rule-based systems, RFM analysis, collaborative filtering, propensity models, and uplift modeling. Each was genuinely useful. Each had a ceiling that reflected the fundamental constraint of the era: every insight required a human to define it.
                     </p>
                     <p>
-                      Rule-based systems were efficient within narrow parameters — send a re-engagement email to anyone who browsed three times without purchasing — but they required constant maintenance. Every new behavioral pattern demanded a human analyst to identify the gap and write a new rule. Markets move faster than analysts can write rules.
+                      Rule-based systems were efficient within narrow parameters (like sending a re-engagement email to anyone who browsed three times without purchasing), but they required constant maintenance. Every new behavioral pattern demanded a human analyst to identify the gap and write a new rule. Markets move faster than analysts can write rules.
                     </p>
                     <p>
                       <strong>RFM analysis (Recency, Frequency, Monetary value)</strong> gave marketing teams a vocabulary for audience quality that remains useful today. A subscription company using RFM to identify lapsed high-spenders for a win-back campaign is doing something genuinely smart. The problem: RFM describes the past. It offers almost no signal about what a customer actually wants next.
                     </p>
                     <p>
-                      <strong>A/B testing</strong> completed the classical toolkit as the gold standard for validation — statistically sound, widely trusted, and brutally slow. In markets where consumer preferences shift seasonally or weekly, that's not a testing cadence. That's a bottleneck.
+                      <strong>Collaborative Filtering</strong> identified patterns across users to predict the "Next Best Item." While powerful for early recommendation engines, classical implementations struggled with the "cold start" problem and required massive computational overhead to run in real-time.
+                    </p>
+                    <p>
+                      <strong>Propensity and Uplift Modeling</strong> brought statistical rigor to targeting. Propensity models estimated the probability of a response to prioritize high-value leads, while uplift modeling identified who would convert specifically because of an intervention. The limitation? They were often static, requiring manual retraining and scoring cycles.
+                    </p>
+                    <p>
+                      <strong>A/B testing</strong> completed the classical toolkit as the gold standard for validation: statistically sound, widely trusted, and brutally slow. In markets where consumer preferences shift seasonally or weekly, that's not a testing cadence. That's a bottleneck.
                     </p>
                   </div>
                   
                   <div className="mt-12 p-10 bg-secondary-bg/50 border-l-2 border-accent rounded-r-2xl">
                     <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-4">The Shared Constraint</h4>
-                    <p className="text-lg text-muted-foreground leading-relaxed">All classical personalization methods required human beings to define the rules, interpret the signals, and manually scale the insights. This created a hard ceiling on how deeply — and how dynamically — any brand could personalize the customer experience.</p>
+                    <p className="text-lg text-muted-foreground leading-relaxed">All classical personalization methods required human beings to define the rules, interpret the signals, and manually scale the insights. This created a hard ceiling on how deeply, and how dynamically, any brand could personalize the customer experience.</p>
                   </div>
                 </section>
 
@@ -120,14 +126,14 @@ export default function BlogPost() {
                       <div className="h-px w-12 bg-accent mb-6"></div>
                       <h3 className="text-xl font-serif font-bold tracking-tight">NLP & Unstructured Data</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        For the first time, systems could process unstructured data—text, images, audio—and extract meaningful signals. NLP can read not just what customers buy, but how they feel about their experiences.
+                        For the first time, systems could process unstructured data (text, images, audio) and extract meaningful signals. NLP can read not just what customers buy, but how they feel about their experiences.
                       </p>
                     </div>
                     <div className="space-y-4">
                       <div className="h-px w-12 bg-accent mb-6"></div>
                       <h3 className="text-xl font-serif font-bold tracking-tight">Reinforcement Learning</h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Unlike static models, RL agents optimize in real time—taking actions, observing outcomes, and adjusting behavior to maximize a reward signal. This is the logic driving Spotify’s Discover Weekly.
+                        Unlike static models, RL agents optimize in real time, taking actions, observing outcomes, and adjusting behavior to maximize a reward signal. This is the logic driving Spotify’s Discover Weekly.
                       </p>
                     </div>
                   </div>
@@ -139,8 +145,8 @@ export default function BlogPost() {
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-12">
                     {[
-                      { title: "Regulatory Exposure", desc: "GDPR and CCPA aren't compliance footnotes — they directly constrain how AI models are trained and deployed. Consent management must be built into the workflow from day one." },
-                      { title: "Surveillance vs Relevance", desc: "There is a thin, important line between a helpful recommendation and being watched. Consumers will share data — but only when they feel in control of the exchange." },
+                      { title: "Regulatory Exposure", desc: "GDPR and CCPA aren't compliance footnotes; they directly constrain how AI models are trained and deployed. Consent management must be built into the workflow from day one." },
+                      { title: "Surveillance vs Relevance", desc: "There is a thin, important line between a helpful recommendation and being watched. Consumers will share data, but only when they feel in control of the exchange." },
                       { title: "Algorithmic Bias", desc: "Models trained on historical data encode historical inequities. Regular fairness audits and cross-functional review are now standard practice for responsible teams." },
                       { title: "The Cookieless Pivot", desc: "Third-party cookies are gone. The path forward runs through first-party and zero-party data proactively volunteered by consumers." }
                     ].map((item, i) => (
@@ -159,9 +165,9 @@ export default function BlogPost() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                     {[
                       { label: "Generative AI", title: "Content at Scale", desc: "Instead of A/B testing three subject lines, generate a distinct, dynamically written subject line for each of two million subscribers." },
-                      { label: "Federated Learning", title: "Privacy-Preserving ML", desc: "Models trained locally on devices, sharing only aggregated updates—never raw personal data. A structural competitive advantage." },
+                      { label: "Federated Learning", title: "Privacy-Preserving ML", desc: "Models trained locally on devices, sharing only aggregated updates, never raw personal data. A structural competitive advantage." },
                       { label: "Contextual AI", title: "Real-time Signals", desc: "Synthesizing signals from the current session, device type, and even weather to make instantaneous decisions without explicit input." },
-                      { label: "Agentic AI", title: "Autonomous Orchestration", desc: "Autonomous agents that identify a churn risk, craft a retention offer, and select the optimal channel — all without human triggering." }
+                      { label: "Agentic AI", title: "Autonomous Orchestration", desc: "Autonomous agents that identify a churn risk, craft a retention offer, and select the optimal channel, all without human triggering." }
                     ].map((item, i) => (
                       <div key={i} className="p-8 bg-secondary-bg/30 border border-foreground/5 hover:border-accent/20 transition-all rounded-xl">
                         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent mb-4 block">{item.label}</span>
