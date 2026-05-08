@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 const blogPosts = [
   {
     id: "personalization-marketing-science",
-    title: "The Science of Making It Personal: How AI Is Rewriting Marketing's Most Misunderstood Discipline",
+    title: "Personalization in Marketing Science: How AI Is Rewriting the Rules of Engagement",
     excerpt: "From RFM scores to reinforcement learning, and what comes after the cookie crumbles.",
     date: "May 2026",
     category: "Marketing Science",
