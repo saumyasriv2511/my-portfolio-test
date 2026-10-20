@@ -10,6 +10,71 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "incrementality-retention",
+    title: "Your Email Dashboard Counts Wins You Would Have Gotten Anyway: Why Incrementality Is the New Retention Metric",
+    excerpt: "Your win-back email reports 200 buyers and a hero campaign. But how many of those 200 would have bought anyway, without the email?",
+    date: "2026-10-20",
+    category: "AI & Growth",
+    readTime: "5 min read",
+    content: `
+You send a win-back email to 1,000 lapsed customers. Two hundred buy within a week. Your dashboard reports a 20% conversion rate and calls it a hero campaign.
+
+Now the uncomfortable question. How many of those 200 would have bought anyway, without the email?
+
+If the answer is 150, your real win is 50 buyers, not 200. The rest is credit your dashboard is taking for sales it did not cause. This is the idea called incrementality, and a wave of mid-October product news is pushing it from a specialist topic to the standard growth teams will be judged by.
+
+## What just happened
+
+Three moves, all in the first half of October, tell one story. The industry is building holdout testing into the tools marketers actually use.
+
+A holdout test is simple. You keep a small, random group of customers out of a campaign. Then you compare their behaviour to the group that got it. The gap between the two tells you what the campaign actually caused.
+
+On October 7, Google opened self-serve Conversion Lift studies to Search and Performance Max campaigns. These studies hold out a group of users who never see the campaign, and the gap between them and exposed users estimates incremental conversions. The catch is the entry bar: at least 1,000 observed conversions and a $5,000 minimum campaign budget. That puts it out of reach for smaller teams.
+
+On October 15, a customer engagement platform called Optimove published first customer results for its AI product. One operator ran 44 real-time triggered activations reaching 354,000 player touches, each statistically significant against a control group. A content-only reactivation test produced 13.8% more deposits per 1,000 targeted players. The notable part is not the numbers. It is that they were reported against control groups at all. That is what lets a buyer check the vendor's work.
+
+On October 14, a measurement company called Lifesight rebuilt its unified marketing measurement platform around AI agents. The company says marketing scientists approve each model before it goes live, and marketers keep control of budget decisions. It reports serving more than 500 brands, though that figure is the company's own claim, not an independent count.
+
+None of this is about a quiet tweak. It is a shift in what counts as proof.
+
+## Why your dashboard counts phantom wins
+
+Most dashboards run on attribution. Attribution means assigning credit for each sale to the ad or email the customer last touched. It is a rule for splitting credit, not a test of what caused the sale.
+
+Incrementality is different. It asks: what would have happened without the campaign? That is the only question that decides whether the money was worth spending.
+
+The gap between the two can be huge. Reported figures from holdout studies of dozens of direct-to-consumer brands put median retargeting incrementality near 28%. In plain words, roughly 7 in 10 attributed conversions were not caused by the ad. A separate reported Meta internal study across 15 advertisers found only 34% of attributed conversions were genuinely incremental.
+
+Treat those as reported figures, not settled science. They come from vendor and marketing sources, not independent studies. But they point in one direction, and your own number could be higher or lower. The only way to know is to test.
+
+This hits retention hardest where discounts are involved. A 20%-off win-back email converts beautifully. But if the buyer was about to purchase at full price, you just paid margin to learn nothing. The right question is not "did the order happen?" It is "was the order incremental enough to justify the margin I gave away?"
+
+## The cure is embarrassingly simple
+
+Think of a holdout test like a medicine trial. Half the patients get the pill, half get a sugar pill. You compare who got better. Same idea, applied to your email list.
+
+Pick a segment. Split off 5 to 10% at random. Do not send them the campaign. Compare purchase rates. Two rules keep the test honest. The split must be truly random, not "the customers we like." And the holdout group must not receive the same offer through another channel during the test window, or the comparison breaks.
+
+One more principle to carry. Incrementality is the audit. Attribution is the operating view. You need attribution to run campaigns day to day. But without periodic holdout tests to audit it, attribution quietly drifts into fiction. Just do not take a test result and multiply it across your whole attribution report to claim a number. Finance will ask one question you cannot answer.
+
+And this applies to the newest channels too. Before you pay commission on AI-referred orders, run a holdout test to measure how many of those orders your existing channels would have closed anyway. AI assistants that "recommend" you may mostly be collecting rent on demand you already earned.
+
+## What growth teams should do now
+
+1. Run one holdout on your biggest recurring send. Your monthly win-back, your cart-recovery flow, your biggest loyalty email. Five to ten percent holdout, one test window. An email holdout needs only randomization, not budget. That is its great advantage over paid media.
+
+2. Read the gap, not the open rate. Opens and clicks tell you who noticed. Only the holdout gap tells you who was moved.
+
+3. Audit your discounts with the margin question. For every recurring offer, ask: was the order incremental enough to justify the margin I gave away? Retire the ones that fail the test. Keep the ones that pass, with confidence.
+
+4. Hold every vendor to the same standard. If a platform reports a lift, ask one question: against what control group? The mid-October wave shows the serious vendors are already answering. Make it a buying criterion.
+
+The timing is almost too good. A holdout test run in late October tells you how much of your retargeting is truly incremental before Black Friday, the most expensive spending season of the year. A dashboard that counts phantom wins does not just mislead you. It tells you to spend more on the illusion.
+
+Sources: WebProNews (Oct 7, 2026); AgileBrandGuide (Oct 15, 2026); AgileBrandGuide (Oct 16, 2026); OmniConvert; CloseRev; AdBeacon.
+`,
+  },
+  {
     slug: "crm-that-updates-itself",
     title: "Your CRM Is Rotting While You Read This: Why the Next Growth Edge Is a Customer Database That Updates Itself",
     excerpt: "Nothing went wrong with your offer. Your customer list did. It went out of date while no one was watching.",
