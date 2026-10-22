@@ -10,6 +10,62 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-pricing-trust-cost",
+    title: "Your AI-Adjusted Price Just Churned a Five-Year Customer: The Trust Cost of Algorithmic Pricing",
+    excerpt: "Members who paid the full price found out a neighbor got 20% off, and they weren't angry about the money. They were angry about the difference.",
+    date: "2026-10-22",
+    category: "AI & Growth",
+    readTime: "4 min read",
+    content: `
+A few years ago, at the large membership retailer where I led CRM and membership analytics, we ran a simple test. We offered a renewal discount to some lapsing members and not others. The math worked. Renewals went up. And then the complaints came in.
+
+Members who paid the full price found out a neighbor got 20% off, and they weren't angry about the money. They were angry about the difference. Two people, same membership, two prices. Nobody explained why.
+
+I think about that story every time I read about AI pricing this week, because the news is getting loud again.
+
+## The backlash is running ahead of the practice
+
+The Associated Press reported this week on shoppers getting angry and confused about AI pricing tools and digital shelf labels showing up at large retailers. A vendor survey of more than 2,200 business leaders found 41% use AI to track competitor prices and 28% use it to adjust prices in real time. That's a vendor survey, so take it with salt — but the direction is real.
+
+Here's the honest part: the evidence of actual harm is still thin. Researchers who tracked one grocery chain after it installed digital labels found virtually no surge pricing. The viral claims — like shelf labels scanning shoppers' faces to set prices — are false.
+
+But two large retailers put out statements this month denying they use personal data to set individual prices. And one major grocery platform announced it was dropping its AI pricing test after an investigation found some shoppers paid up to 23% more for identical items — an estimated $1,200 a year more for a family of four.
+
+Nobody has proven widespread harm. But the backlash arrived before the proof. And that is usually when rules get written.
+
+## Pricing became a trust question before it became a data question
+
+This is the part that matters for retention. Customers judge fairness long before anyone runs a study. A price that moves with demand, stock, or competition is fine — if you explain it. Everyone understands a flight costs more on a holiday weekend.
+
+A price that moves with who the customer is feels different. And it will be judged differently — by customers first, and now by regulators. The FTC proposed this summer that businesses using personal data to set individual prices should clearly disclose it. Note: proposed, not final. But lawmakers in 30 states considered pricing bills this year, and three states — Maryland, New Jersey, and Connecticut — have already enacted limits on using personal data to set prices.
+
+My honest read: you will be judged on perceived fairness before anyone proves actual harm. Just like marketing dashboards get judged before anyone runs a holdout. (I wrote about this last week — incrementality isn't just a measurement discipline, it's a trust discipline.)
+
+## The AI bill is coming due too
+
+One more piece of news this week, and it fits my favorite theme: Forrester's 2027 predictions say exorbitant AI economics will force marketers to scale back a third of AI initiatives — because martech vendors are shifting to usage-based pricing, so every prompt, every agent interaction, every automated workflow becomes a billable event. Sixty-four percent of US B2C marketing executives believe their AI use will likely produce a brand-damaging incident within the next year.
+
+The blank-check era of AI is ending. Every AI investment — pricing tools included — will have to prove its value like any other spend.
+
+## What a smaller brand should actually do
+
+You don't need a fairness committee. But if AI touches your prices, hold yourself to this test: could you defend this exact price to the five-year customer standing in front of you?
+
+A few guardrails that fit a small team:
+
+Keep it to segments, not individuals. Pricing by demand, season, or inventory is explainable. Pricing by person — their history, their zip code, their urgency — is where the trust breaks.
+
+Put caps on the swing. Decide the maximum percentage a price can move, and review it whenever it hits the cap.
+
+Test like you'd measure a campaign. A discount is marketing spend wearing a different costume. Ask the incrementality question: which margin was truly caused by the price change? If you can't answer that, you're flying blind on your most visible marketing decision.
+
+That renewal-discount test at the retailer? We kept the program. But we changed the rule: everyone got the same offer, and we said so plainly. Renewals held. Complaints stopped.
+
+Sometimes the growth move is the boring, honest one.
+
+Sources: Forrester's Predictions 2027 B2C marketing blog (Oct 21, 2026); Associated Press reporting on AI pricing tools and digital shelf labels (Oct 18, 2026); Simon-Kucher vendor survey of 2,200+ business leaders; FTC proposal on personalized pricing disclosure (Aug 2026); Consumer Reports / Groundwork Collaborative investigation and grocery platform rollback (~Oct 14, 2026); two large retailer statements denying personalized pricing (Oct 5 and Oct 15, 2026).`
+  },
+  {
     slug: "incrementality-retention",
     title: "Your Email Dashboard Counts Wins You Would Have Gotten Anyway: Why Incrementality Is the New Retention Metric",
     excerpt: "I used to report win-back numbers with a straight face: 200 buyers, a 20% conversion rate. Then I asked how many would have bought anyway.",
