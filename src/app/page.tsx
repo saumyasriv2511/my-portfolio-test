@@ -31,8 +31,9 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-foreground/5 px-6 py-4">
         <div className="container-custom flex justify-between items-center">
-          <Link href="/" className="font-serif text-2xl font-bold tracking-tighter">
-            ASK SAUMYA <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground ml-2">Consulting</span>
+          <Link href="/" className="font-serif text-2xl font-bold tracking-tighter flex items-center gap-3">
+            <img src="/logo-as-mark.png" alt="ASK SAUMYA Consulting logo" className="h-9 w-auto" />
+            <span>ASK SAUMYA <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground ml-2">Consulting</span></span>
           </Link>
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#who-i-help" className="nav-link">Who I Help</a>
@@ -530,8 +531,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]">
         <div className="container-custom">
-          <p className="mb-8 font-serif text-xl md:text-2xl font-bold tracking-tight normal-case text-foreground">
-            ASK SAUMYA Consulting — Drive Measurable Customer Growth.
+          <p className="mb-8 font-serif text-xl md:text-2xl font-bold tracking-tight normal-case text-foreground flex items-center justify-center gap-3">
+            <img src="/logo-as-mark.png" alt="" className="h-7 w-auto" />
+            <span>ASK SAUMYA Consulting — Drive Measurable Customer Growth.</span>
           </p>
           <p className="mb-6 normal-case tracking-normal text-sm">
             <a href="mailto:hello@asksaumya.com" className="hover:text-foreground transition-colors">hello@asksaumya.com</a>
