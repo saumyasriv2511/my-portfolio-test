@@ -32,7 +32,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-foreground/5 px-6 py-4">
         <div className="container-custom flex justify-between items-center">
           <Link href="/" className="font-serif text-2xl font-bold tracking-tighter">
-            Saumya Srivastava
+            ASK SAUMYA <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground ml-2">Consulting</span>
           </Link>
           <div className="hidden md:flex space-x-8 items-center">
             <a href="#who-i-help" className="nav-link">Who I Help</a>
@@ -59,13 +59,13 @@ export default function Home() {
               className="max-w-5xl"
             >
               <span className="text-muted-foreground uppercase tracking-[0.3em] text-[10px] font-bold mb-8 block">
-                Independent Strategic Advisor — ASK SAUMYA Consulting
+                ASK SAUMYA CONSULTING
               </span>
               <h1 className="text-4xl md:text-6xl font-serif font-bold leading-[1.05] mb-8 tracking-tight">
-                Strategy is a claim on the future. I help you <span className="text-muted-foreground/40 italic font-medium">back it with data.</span>
+                Strategy is a claim on the future. I help you <span className="italic">back it with data.</span>
               </h1>
               <p className="text-2xl md:text-3xl text-foreground max-w-3xl mb-8 leading-tight font-medium tracking-tight">
-                I help B2C brands drive measurable <span className="text-muted-foreground/40 italic font-medium">customer growth.</span>
+                I help B2C brands drive measurable customer growth.
               </p>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
                 I&rsquo;m Saumya Srivastava, a marketing analytics advisor. I work with B2C companies under 1,000 employees on lifecycle marketing, personalization, and proving what actually worked.
@@ -347,13 +347,22 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
                 className="lg:w-2/5 grid grid-cols-1 gap-4"
               >
+                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground">Experience</p>
+                {[
+                  "Former Director @ Rocket Mortgage",
+                  "Former Senior Director @ AAA Life",
+                  "Former Associate Director @ Walmart/Sam's Club",
+                  "13+ Years Industry Experience"
+                ].map((tag, idx) => (
+                  <div key={idx} className="p-8 bg-background border border-foreground/5 text-left font-bold text-sm uppercase tracking-widest flex items-center shadow-sm">
+                    <span className="w-2 h-2 bg-foreground mr-4"></span>
+                    {tag}
+                  </div>
+                ))}
+                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground mt-6">Education</p>
                 {[
                   "MS Business Analytics (U of Minnesota)",
-                  "BTech Computer Science",
-                  "Former Director @ Rocket Mortgage",
-                  "Senior Director @ AAA Life",
-                  "Assoc. Director @ Walmart/Sam's Club",
-                  "13+ Years Industry Experience"
+                  "BTech Computer Science"
                 ].map((tag, idx) => (
                   <div key={idx} className="p-8 bg-background border border-foreground/5 text-left font-bold text-sm uppercase tracking-widest flex items-center shadow-sm">
                     <span className="w-2 h-2 bg-foreground mr-4"></span>
@@ -521,6 +530,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]">
         <div className="container-custom">
+          <p className="mb-8 font-serif text-xl md:text-2xl font-bold tracking-tight normal-case text-foreground">
+            ASK SAUMYA Consulting — Drive Measurable Customer Growth.
+          </p>
           <p className="mb-6 normal-case tracking-normal text-sm">
             <a href="mailto:hello@asksaumya.com" className="hover:text-foreground transition-colors">hello@asksaumya.com</a>
             <span className="mx-3">•</span>
