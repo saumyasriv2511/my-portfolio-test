@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle, Mail, MousePointer2, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Script from "next/script";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -32,8 +33,8 @@ export default function Home() {
             <a href="#impact" className="nav-link">Impact</a>
             <Link href="/blog" className="nav-link">Blog</Link>
             <a href="#about" className="nav-link">About</a>
-            <a href="#contact" className="nav-link border border-foreground px-5 py-2 rounded-full hover:bg-foreground hover:text-background transition-all">
-              Work With Me
+            <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="nav-link border border-foreground px-5 py-2 rounded-full hover:bg-foreground hover:text-background transition-all">
+              Book a Call
             </a>
           </div>
         </div>
@@ -50,24 +51,26 @@ export default function Home() {
               className="max-w-5xl"
             >
               <span className="text-muted-foreground uppercase tracking-[0.3em] text-[10px] font-bold mb-8 block">
-                Independent Strategic Advisor
+                Independent Strategic Advisor — ASK SAUMYA Consulting
               </span>
               <h1 className="text-6xl md:text-9xl font-serif font-bold leading-[1] mb-12 tracking-tight">
-                Strategy is a claim on the future. <br />
-                <span className="text-muted-foreground/40 italic font-medium">I help you back it with data.</span>
+                I help B2C brands drive measurable <span className="text-muted-foreground/40 italic font-medium">customer growth.</span>
               </h1>
               <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
-                Bridging the gap between high-level marketing strategy and technical data execution at scale, serving global growth teams.
+                I&rsquo;m Saumya Srivastava, a marketing analytics advisor. I work with B2C companies under 1,000 employees on lifecycle marketing, personalization, and proving what actually worked.
               </p>
               <div className="flex flex-col sm:flex-row gap-8">
-                <a href="#contact" className="btn-primary group">
-                  Inquire for Q3 2026
+                <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary group">
+                  Book a 30-minute intro call
                   <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
-                <a href="#impact" className="btn-secondary">
-                  View Selected Work
+                <a href="#about" className="btn-secondary">
+                  See how I work
                 </a>
               </div>
+              <p className="mt-12 text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
+                13+ years leading marketing analytics &middot; $100M+ measurable business impact
+              </p>
             </motion.div>
           </div>
         </section>
@@ -133,7 +136,7 @@ export default function Home() {
             <motion.div {...fadeInUp} className="mb-24">
               <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Selected Impact</h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-snug">
-                Quantified outcomes from leadership roles at Sam's Club, Rocket Mortgage, and AAA Life Insurance.
+                Quantified outcomes from 13+ years leading marketing analytics and data science teams.
               </p>
             </motion.div>
 
@@ -225,6 +228,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Booking Section */}
+        <section id="booking" className="section-padding bg-secondary-bg border-y border-foreground/5">
+          <div className="container-custom">
+            <motion.div {...fadeInUp} className="mb-16 text-center">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Book a 30-minute intro call</h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-medium leading-snug">
+                Pick a time that works for you. No pitch — we&rsquo;ll talk about what&rsquo;s actually going on in your numbers.
+              </p>
+            </motion.div>
+            <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
+              <div
+                id="cal-inline-intro-call"
+                className="w-full border border-foreground/5 bg-background shadow-sm"
+                style={{ minHeight: "640px", overflow: "scroll" }}
+              ></div>
+            </motion.div>
+            <p className="mt-10 text-center text-muted-foreground font-medium">
+              Prefer to open the booking page directly?{" "}
+              <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground transition-colors">
+                cal.com/asksaumya/intro-call
+              </a>
+            </p>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="section-padding">
           <div className="container-custom text-center">
@@ -234,10 +262,16 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-4xl mx-auto py-24 md:py-40 border-t border-foreground"
             >
-              <h2 className="text-5xl md:text-8xl font-serif font-bold mb-12 tracking-tighter">Let’s define <br />the future.</h2>
+              <h2 className="text-5xl md:text-8xl font-serif font-bold mb-12 tracking-tighter">Let’s talk about <br />your growth numbers.</h2>
               <p className="text-2xl md:text-3xl text-muted-foreground mb-16 font-medium tracking-tight leading-tight max-w-2xl mx-auto">
-                I am currently accepting inquiries for consulting engagements starting Q3 2026.
+                30 minutes, no pitch. If we&rsquo;re not a fit, I&rsquo;ll tell you.
               </p>
+              <div className="mb-16 flex justify-center">
+                <a href="#booking" className="btn-primary group">
+                  Book a 30-minute intro call
+                  <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </div>
               
               <div className="flex flex-col items-center gap-12">
                 <a 
@@ -263,9 +297,22 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]">
         <div className="container-custom">
+          <p className="mb-6 normal-case tracking-normal text-sm">
+            <a href="mailto:hello@asksaumya.com" className="hover:text-foreground transition-colors">hello@asksaumya.com</a>
+            <span className="mx-3">•</span>
+            <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Book a Call</a>
+          </p>
           <p>© 2026 Saumya Srivastava. All rights reserved.</p>
         </div>
       </footer>
+
+      <Script src="https://app.cal.com/embed/embed.js" strategy="lazyOnload" />
+      <Script id="cal-inline-init" strategy="lazyOnload">{`
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "intro-call", { origin: "https://cal.com" });
+        Cal.ns["intro-call"]("inline", { elementOrSelector: "#cal-inline-intro-call", config: { layout: "month_view" }, calLink: "asksaumya/intro-call" });
+        Cal.ns["intro-call"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
+      `}</Script>
     </div>
   );
 }
