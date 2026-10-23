@@ -53,10 +53,13 @@ export default function Home() {
               <span className="text-muted-foreground uppercase tracking-[0.3em] text-[10px] font-bold mb-8 block">
                 Independent Strategic Advisor — ASK SAUMYA Consulting
               </span>
-              <h1 className="text-6xl md:text-9xl font-serif font-bold leading-[1] mb-12 tracking-tight">
-                I help B2C brands drive measurable <span className="text-muted-foreground/40 italic font-medium">customer growth.</span>
+              <h1 className="text-4xl md:text-6xl font-serif font-bold leading-[1.05] mb-8 tracking-tight">
+                Strategy is a claim on the future. I help you <span className="text-muted-foreground/40 italic font-medium">back it with data.</span>
               </h1>
-              <p className="text-2xl md:text-3xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
+              <p className="text-2xl md:text-3xl text-foreground max-w-3xl mb-8 leading-tight font-medium tracking-tight">
+                I help B2C brands drive measurable <span className="text-muted-foreground/40 italic font-medium">customer growth.</span>
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
                 I&rsquo;m Saumya Srivastava, a marketing analytics advisor. I work with B2C companies under 1,000 employees on lifecycle marketing, personalization, and proving what actually worked.
               </p>
               <div className="flex flex-col sm:flex-row gap-8">
