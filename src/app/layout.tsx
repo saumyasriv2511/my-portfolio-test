@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Saumya Srivastava | Marketing Data Science & AI Strategy",
-  description: "Senior independent consultant bridging the gap between marketing strategy and data execution at scale.",
+  title: "Customer Growth Analytics for B2C Companies | Saumya Srivastava",
+  description: "Saumya Srivastava helps B2C brands under 1,000 employees drive measurable customer growth — lifecycle analytics, personalization, and incrementality measurement. Book a 30-minute intro call.",
 };
 
 export default function RootLayout({
