@@ -531,10 +531,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]">
         <div className="container-custom">
-          <p className="mb-8 font-serif text-xl md:text-2xl font-bold tracking-tight normal-case text-foreground flex items-center justify-center gap-3">
-            <img src="/logo-as-mark.png" alt="" className="h-7 w-auto" />
-            <span>ASK SAUMYA Consulting — Drive Measurable Customer Growth.</span>
-          </p>
+          <div className="mb-8 flex flex-col items-center gap-5">
+            <img src="/logo-lockup.png" alt="ASK SAUMYA Consulting" className="h-24 w-auto" />
+            <span>Drive Measurable Customer Growth.</span>
+          </div>
           <p className="mb-6 normal-case tracking-normal text-sm">
             <a href="mailto:hello@asksaumya.com" className="hover:text-foreground transition-colors">hello@asksaumya.com</a>
             <span className="mx-3">•</span>
