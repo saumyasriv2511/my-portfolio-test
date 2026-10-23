@@ -50,5 +50,5 @@
 }
 
 .btn-secondary {
-  @apply border border-foreground/10 px-8 py-4 rounded-full font-bold hover:bg-foreground/5 transition-all text-center;
+  @apply inline-flex items-center justify-center border border-foreground/10 px-8 py-4 rounded-full font-bold hover:bg-foreground/5 transition-all text-center;
 }
