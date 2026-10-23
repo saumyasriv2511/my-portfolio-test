@@ -72,7 +72,7 @@ export default function Home() {
                 I help B2C brands drive measurable customer growth.
               </p>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mb-16 leading-tight font-medium tracking-tight">
-                I&rsquo;m Saumya Srivastava, a marketing analytics advisor. I work with B2C companies under 1,000 employees on lifecycle marketing, personalization, and proving what actually worked.
+                I&rsquo;m Saumya Srivastava, a strategic analytics advisor. I help mid-scale B2C and DTC companies keep customers buying, personalize the right offers, prove which marketing actually worked, and spot which customers are worth betting on.
               </p>
               <div className="flex flex-col sm:flex-row gap-8">
                 <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="btn-primary group">
