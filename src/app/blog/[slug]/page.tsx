@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { blogPosts } from "@/content/blogs";
 
 export function generateStaticParams() {
@@ -28,7 +28,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const publishedLabel = `${monthNames[Number(month) - 1]} ${year}`;
 
   return <div className="min-h-screen bg-background text-foreground font-sans">
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-foreground/5 px-6 py-4"><div className="container-custom flex justify-between items-center"><Link href="/" className="font-serif text-2xl font-bold tracking-tighter">Saumya Srivastava</Link><Link href="/blog" className="nav-link flex items-center gap-2"><ArrowLeft className="w-4 h-4" /> All articles</Link></div></nav>
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-foreground/5 px-6 py-4"><div className="container-custom flex justify-between items-center"><Link href="/" className="font-serif text-2xl font-bold tracking-tighter flex items-center gap-3"><img src="/logo-as-mark.png" alt="ASK SAUMYA Consulting logo" className="h-9 w-auto" /><span>ASK SAUMYA <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground ml-2">Consulting</span></span></Link><div className="hidden md:flex space-x-8 items-center"><Link href="/#who-i-help" className="nav-link">Who I Help</Link><Link href="/#services" className="nav-link">Services</Link><Link href="/#impact" className="nav-link">Results</Link><Link href="/#process" className="nav-link">Process</Link><Link href="/#about" className="nav-link">About</Link><Link href="/blog" className="nav-link text-foreground">Insights</Link><a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="nav-link border border-foreground px-5 py-2 rounded-full hover:bg-foreground hover:text-background transition-all">Book a Call</a></div></div></nav>
     <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 container-custom"><div className="max-w-6xl mx-auto"><div className="flex flex-col lg:flex-row gap-16 lg:gap-24"><aside className="lg:w-1/4"><div className="sticky top-32 space-y-12"><div><h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent mb-4">Focus Area</h4><p className="font-serif text-lg italic">{post.category}</p></div><div><h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground mb-4">Published</h4><p className="text-sm font-medium">{publishedLabel}</p></div><div><h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground mb-4">Follow Along</h4><a href="https://asksaumya.com" className="text-sm font-bold border-b border-foreground/10 hover:border-foreground transition-all">asksaumya.com</a></div></div></aside><article className="lg:w-3/4">
       <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent mb-8"><span className="text-muted-foreground">{post.readTime}</span></div>
       <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tighter mb-8 leading-[1.1]">{post.title}</h1>
@@ -36,6 +36,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="space-y-8">{renderMarkdown(post.content)}</div>
       <Link href="/blog" className="mt-20 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b border-foreground pb-2">More articles <ArrowUpRight className="w-4 h-4" /></Link>
     </article></div></div></main>
-    <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]"><p>© 2026 Saumya Srivastava. All rights reserved.</p></footer>
+    <footer className="py-20 border-t border-foreground/5 bg-secondary-bg text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.4em]"><div className="container-custom"><p className="mb-8 font-serif text-xl md:text-2xl font-bold tracking-tight normal-case text-foreground flex items-center justify-center gap-3"><img src="/logo-as-mark.png" alt="" className="h-7 w-auto" /><span>ASK SAUMYA Consulting — Drive Measurable Customer Growth.</span></p><p className="mb-6 normal-case tracking-normal text-sm"><a href="mailto:hello@asksaumya.com" className="hover:text-foreground transition-colors">hello@asksaumya.com</a><span className="mx-3">•</span><a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Book a Call</a></p><p>© 2026 Saumya Srivastava. All rights reserved.</p></div></footer>
   </div>;
 }
