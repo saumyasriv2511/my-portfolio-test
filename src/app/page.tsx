@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, CheckCircle, Mail, MousePointer2, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ArrowRight, CheckCircle, Mail, MousePointer2, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
+import { blogPosts } from "@/content/blogs";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -20,6 +21,11 @@ const staggerContainer = {
 };
 
 export default function Home() {
+  const latestPosts = [...blogPosts]
+    .filter((post) => post.slug !== "personalization-marketing-science")
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans">
       {/* Navigation */}
@@ -28,11 +34,13 @@ export default function Home() {
           <Link href="/" className="font-serif text-2xl font-bold tracking-tighter">
             Saumya Srivastava
           </Link>
-          <div className="hidden md:flex space-x-12 items-center">
-            <a href="#services" className="nav-link">Expertise</a>
-            <a href="#impact" className="nav-link">Impact</a>
-            <Link href="/blog" className="nav-link">Blog</Link>
+          <div className="hidden md:flex space-x-8 items-center">
+            <a href="#who-i-help" className="nav-link">Who I Help</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#impact" className="nav-link">Results</a>
+            <a href="#process" className="nav-link">Process</a>
             <a href="#about" className="nav-link">About</a>
+            <Link href="/blog" className="nav-link">Insights</Link>
             <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="nav-link border border-foreground px-5 py-2 rounded-full hover:bg-foreground hover:text-background transition-all">
               Book a Call
             </a>
@@ -78,17 +86,54 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services / What I Do */}
-        <section id="services" className="section-padding bg-secondary-bg border-y border-foreground/5">
+        {/* Who I Help Section */}
+        <section id="who-i-help" className="section-padding">
           <div className="container-custom">
-            <motion.div {...fadeInUp} className="mb-24">
-              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Expertise & Service Areas</h2>
+            <motion.div {...fadeInUp} className="mb-16">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Who I Help</h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-snug">
-                I help marketing leaders at mid-to-large international companies build, mature, and automate their growth engines.
+                You should talk to me if&hellip;
               </p>
             </motion.div>
 
-            <motion.div 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 max-w-5xl mb-16">
+              {[
+                "You’re spending on acquisition, but you can’t tell which of it actually works.",
+                "Retention and churn are moving, and nobody can predict or explain why.",
+                "Your “personalization” is the same email with a first name in it.",
+                "Your CRM is full of customer data that nobody trusts enough to act on."
+              ].map((pain, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                  className="flex items-start gap-4"
+                >
+                  <CheckCircle className="w-7 h-7 mt-1 shrink-0" />
+                  <p className="text-xl md:text-2xl font-medium leading-snug">{pain}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.p {...fadeInUp} className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-medium leading-snug">
+              I work with B2C companies under 1,000 employees, across the US, Europe, Singapore, UAE, Australia/NZ, and Thailand. You don&rsquo;t need a data team to start.
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="section-padding bg-secondary-bg border-y border-foreground/5">
+          <div className="container-custom">
+            <motion.div {...fadeInUp} className="mb-24">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Services</h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-medium leading-snug">
+                Beyond building models and dashboards, I help leaders create the systems, measurement frameworks, and organizational capabilities needed to make data-driven growth repeatable.
+              </p>
+            </motion.div>
+
+            <motion.div
               variants={staggerContainer}
               initial="initial"
               whileInView="whileInView"
@@ -97,49 +142,65 @@ export default function Home() {
             >
               {[
                 {
-                  title: "Marketing Measurement & Attribution",
-                  desc: "Solving the 'where should we spend next dollar' problem through MMM, MTA, and full-funnel experimental design. Moving beyond vanity metrics to causal impact.",
+                  title: "Customer Lifecycle Growth",
+                  timeline: "2-week diagnostic",
+                  desc: "An audit of how you measure and manage acquisition, engagement, retention, and win-backs today — and where the lifecycle is leaking. You get the prioritized quick wins first, then a 90-day roadmap.",
+                  who: "For teams spending on growth but unsure what's actually working.",
                   icon: <CheckCircle className="w-10 h-10 mb-8" />
                 },
                 {
-                  title: "AI & GenAI Integration",
-                  desc: "Designing and deploying LLM-driven workflows that automate campaign analytics and enhance customer engagement without technical debt.",
+                  title: "Personalization & Loyalty",
+                  timeline: "3 weeks",
+                  desc: "Where personalization will actually pay for you: identifying the right customers and offers, and designing the next-best actions worth building. Includes the data you would need and a 90-day build plan your team can execute.",
+                  who: "For teams sitting on customer data they aren't using.",
                   icon: <MousePointer2 className="w-10 h-10 mb-8" />
                 },
                 {
-                  title: "Personalization Systems & CRM",
-                  desc: "Building the algorithmic backbone for customer lifecycle management—propensity models, churn prediction, and uplift modeling for direct impact.",
+                  title: "Marketing Effectiveness",
+                  timeline: "4-week sprint",
+                  desc: "Holdout and geo-test design, incrementality readouts, and a campaign-testing discipline your team can keep. You get a plain-English view of what actually drove growth — and what it returned.",
+                  who: "For teams whose dashboards count wins they would have gotten anyway.",
                   icon: <ExternalLink className="w-10 h-10 mb-8" />
                 },
                 {
-                  title: "Analytics Strategy & Team Building",
-                  desc: "Consulting on organizational design for data teams. Mapping technical roadmaps and establishing the governance needed for a data-driven culture.",
+                  title: "Customer Intelligence",
+                  timeline: "Ongoing, monthly",
+                  desc: "Predictive models put to work — propensity, churn, and uplift — so customer and investment decisions get made on evidence. Weekly working sessions, measurement QA, experiment review, and team coaching.",
+                  who: "For teams that want a senior analytics brain without hiring one.",
                   icon: <Mail className="w-10 h-10 mb-8" />
                 }
               ].map((service, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   variants={fadeInUp}
                   className="p-12 bg-background border border-foreground/5 hover:border-foreground/20 transition-all duration-300 group shadow-sm"
                 >
                   <div className="text-foreground group-hover:scale-110 transition-transform origin-left duration-300">{service.icon}</div>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground mb-4">{service.timeline}</p>
                   <h3 className="text-3xl font-serif font-bold mb-6 group-hover:text-accent transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed font-medium">
+                  <p className="text-muted-foreground text-lg leading-relaxed font-medium mb-6">
                     {service.desc}
                   </p>
+                  <p className="text-lg leading-relaxed font-medium mb-8">
+                    {service.who}
+                  </p>
+                  <a href="https://cal.com/asksaumya/intro-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-xs font-bold uppercase tracking-widest group-hover:text-accent transition-colors">
+                    Book an intro call to scope this
+                    <ArrowUpRight className="ml-2 w-4 h-4" />
+                  </a>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Impact Section */}
+        {/* Results Section */}
         <section id="impact" className="section-padding">
           <div className="container-custom">
             <motion.div {...fadeInUp} className="mb-24">
-              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Selected Impact</h2>
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Results</h2>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-snug">
-                Quantified outcomes from 13+ years leading marketing analytics and data science teams.
+                Results from 13+ years leading marketing analytics.
               </p>
             </motion.div>
 
@@ -161,12 +222,17 @@ export default function Home() {
                   description: "Flipped a $200K loss to $200K profit while saving $1M in direct mail spend via uplift modeling."
                 },
                 {
+                  value: "+2% / +5%",
+                  label: "Membership Retention & Growth",
+                  description: "Membership retention up 2% and membership growth up 5% year over year, from leading CRM and membership analytics."
+                },
+                {
                   value: "~$100M",
                   label: "Campaign Impact Managed",
                   description: "Led measurement for multi-channel campaigns with an estimated annual impact of $100M+."
                 }
               ].map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -182,6 +248,74 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+
+            <motion.p {...fadeInUp} className="mt-24 text-center text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
+              MS Business Analytics (U of Minnesota) &middot; BTech Computer Science &middot; 13+ years &middot; $100M+ measurable impact
+            </motion.p>
+
+            <motion.div {...fadeInUp} className="mt-12 text-center">
+              <a href="#booking" className="inline-flex items-center text-2xl md:text-3xl font-serif font-bold hover:italic transition-all">
+                Like these numbers? Let&rsquo;s talk about yours.
+                <ArrowUpRight className="ml-3 w-7 h-7" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section id="process" className="section-padding">
+          <div className="container-custom">
+            <motion.div {...fadeInUp} className="mb-24">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">How working together works</h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-snug">
+                A clear path from first call to lasting capability — no leap of faith required.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16">
+              {[
+                {
+                  step: "01",
+                  title: "Book a 30-minute intro call",
+                  desc: "We talk about your numbers. No pitch."
+                },
+                {
+                  step: "02",
+                  title: "Fit check + fixed-scope proposal",
+                  desc: "Scope, timeline, and price — in writing, within 3 days."
+                },
+                {
+                  step: "03",
+                  title: "Diagnostic",
+                  desc: "I dig into your data and how you measure today."
+                },
+                {
+                  step: "04",
+                  title: "Findings + roadmap",
+                  desc: "What's broken, what to fix first, and the plan to fix it."
+                },
+                {
+                  step: "05",
+                  title: "Build the capability",
+                  desc: "I leave behind the systems, measurement frameworks, and team habits that make data-driven growth repeatable — and stay on as advisor if you want me to."
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                  className="border-t border-foreground pt-10"
+                >
+                  <div className="font-serif text-5xl font-bold text-muted-foreground/30 mb-6">{item.step}</div>
+                  <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -189,24 +323,24 @@ export default function Home() {
         <section id="about" className="section-padding bg-secondary-bg">
           <div className="container-custom">
             <div className="flex flex-col lg:flex-row gap-24 items-start">
-              <motion.div 
+              <motion.div
                 {...fadeInUp}
                 className="lg:w-3/5"
               >
                 <h2 className="text-4xl md:text-7xl font-serif font-bold mb-12 tracking-tighter leading-tight">Strategic Leadership, <br />Empirical Rigor.</h2>
                 <div className="space-y-8 text-xl md:text-2xl text-muted-foreground leading-tight font-medium tracking-tight">
                   <p>
-                    With over 12 years in data science—most recently as a Director/Senior Director—I’ve spent my career at the high-stakes intersection of human behavior and predictive modeling.
+                    I&rsquo;m Saumya Srivastava. I founded ASK SAUMYA Consulting in Bengaluru in February 2026, after 13+ years leading marketing analytics and data science teams — most recently as a Director and Senior Director.
                   </p>
                   <p>
-                    I founded my independent practice to help companies bridge the gap between their strategic ambitions and their technical reality. I don't just deliver reports; I build the systems that drive measurable growth.
+                    I help B2C companies with fewer than 1,000 employees grow the customers they already have: lifecycle growth across acquisition, engagement, retention, and win-backs; personalization that is actually personal; and measurement that proves what worked.
                   </p>
                   <p>
-                    After spending nearly a decade in the US Corporate, I bring a global perspective to international clients seeking senior-tier marketing analytics expertise and AI strategy.
+                    That work has added up to $100M+ in measurable business impact. But the numbers are only half of it — beyond building models and dashboards, I help leaders build the systems, measurement frameworks, and organizational capabilities that make data-driven growth repeatable.
                   </p>
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -219,7 +353,7 @@ export default function Home() {
                   "Former Director @ Rocket Mortgage",
                   "Senior Director @ AAA Life",
                   "Assoc. Director @ Walmart/Sam's Club",
-                  "12+ Years Industry Experience"
+                  "13+ Years Industry Experience"
                 ].map((tag, idx) => (
                   <div key={idx} className="p-8 bg-background border border-foreground/5 text-left font-bold text-sm uppercase tracking-widest flex items-center shadow-sm">
                     <span className="w-2 h-2 bg-foreground mr-4"></span>
@@ -227,6 +361,93 @@ export default function Home() {
                   </div>
                 ))}
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Insights Section */}
+        <section id="insights" className="section-padding">
+          <div className="container-custom">
+            <motion.div {...fadeInUp} className="mb-24">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Insights</h2>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-medium leading-snug">
+                Writing on customer growth, measurement, and personalization — for leaders at smaller B2C brands.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {latestPosts.map((post) => (
+                <Link key={post.slug} href={"/blog/" + post.slug} className="group block border-t-2 border-foreground pt-8">
+                  <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-accent mb-6">
+                    <span>{post.category}</span>
+                    <span className="w-1 h-1 bg-muted-foreground rounded-full" />
+                    <span className="text-muted-foreground">{post.date}</span>
+                  </div>
+                  <h3 className="text-3xl font-serif font-bold tracking-tighter mb-4 group-hover:italic">{post.title}</h3>
+                  <p className="text-lg text-muted-foreground font-medium leading-snug mb-6">{post.excerpt}</p>
+                  <div className="flex items-center text-xs font-bold uppercase tracking-widest">
+                    Read Article
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <motion.div {...fadeInUp} className="mt-20">
+              <Link href="/blog" className="btn-secondary group">
+                Read all insights
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faq" className="section-padding">
+          <div className="container-custom">
+            <motion.div {...fadeInUp} className="mb-16">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 tracking-tighter">Common Questions</h2>
+            </motion.div>
+
+            <div className="max-w-4xl">
+              {[
+                {
+                  q: "We don't have a data team — can you still help?",
+                  a: "Yes — that's the normal case for companies this size. We start with the data and reports you already have, and build from there. You don't need to hire anyone first."
+                },
+                {
+                  q: "Do you implement, or only advise?",
+                  a: "Both. Every engagement starts with a diagnostic and a roadmap. From there, I can help your team execute, or stay on as a monthly advisor while they do — whichever fits how you work."
+                },
+                {
+                  q: "How is this different from our agency's reporting?",
+                  a: "Your agency reports what happened. I measure what caused it — using incrementality tests and holdouts — and what you should do next. It's the difference between a scoreboard and a decision."
+                },
+                {
+                  q: "What do you need from us to start?",
+                  a: "Three things: a 30-minute intro call, access to your existing reports and data, and one person on your side who can make decisions."
+                },
+                {
+                  q: "We're not in the US — how do we work together?",
+                  a: "Everything is remote-first. I work with teams across the US, Europe, Singapore, UAE, Australia/NZ, and Thailand, and we schedule calls at times that work on both sides."
+                },
+                {
+                  q: "How much does it cost?",
+                  a: "Every engagement is fixed-scope, so there are no open-ended hours. After the intro call, you get the scope and the price in writing before anything starts. Contact for pricing."
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05, duration: 0.6 }}
+                  className="border-t border-foreground/10 py-10"
+                >
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">{item.q}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed font-medium max-w-3xl">{item.a}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
