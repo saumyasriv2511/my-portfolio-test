@@ -79,7 +79,7 @@ export default function Home() {
                   Book a 30-minute intro call
                   <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
-                <a href="#about" className="btn-secondary">
+                <a href="#services" className="btn-secondary">
                   See how I work
                 </a>
               </div>
